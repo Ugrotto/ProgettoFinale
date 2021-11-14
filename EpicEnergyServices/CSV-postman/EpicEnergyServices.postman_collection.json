@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "f0cd48a1-6faf-43d8-9548-e9d02caf8dc1",
+		"name": "EpicEnergyServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Provincia",
+			"item": [
+				{
+					"name": "saveprovincia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Prova\",\r\n    \"sigla\":\"Pr\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/saveprovincia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"saveprovincia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateprovincia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"Prova\",\r\n    \"sigla\":\"PR\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/updateprovincia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"updateprovincia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteprovincia",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/deleteprovincia?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"deleteprovincia"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comune",
+			"item": [
+				{
+					"name": "savecomune",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"comune1\",\r\n    \"provincia\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Prova\",\r\n        \"sigla\":\"Pr\"\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/savecomune",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"savecomune"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatecomune",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"comuneprova\",\r\n    \"provincia\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Prova\",\r\n        \"sigla\":\"PR\"\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/updatecomune",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"updatecomune"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletecomune",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/deletecomune?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"deletecomune"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Indirizzo",
+			"item": [
+				{
+					"name": "saveindirizzo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/saveindirizzo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"saveindirizzo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateindirizzo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"via\":\"Via dei Mille di Prova\",\r\n    \"civico\":\"1233\",\r\n    \"cap\":\"00001\",\r\n    \"localita\":\"localita1update\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comuneprova\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"PR\"\r\n\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/updateindirizzo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"updateindirizzo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteindirizzo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/indirizzocontroller/deleteindirizzo?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"indirizzocontroller",
+								"deleteindirizzo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "savecliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ragioneSociale\":\"rag1\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/clientecontroller/savecliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"clientecontroller",
+								"savecliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatecliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"ragioneSociale\":\"rag1prova\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/clientecontroller/updatecliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"clientecontroller",
+								"updatecliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletecliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/clientecontroller/deletecliente?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"clientecontroller",
+								"deletecliente"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fattura",
+			"item": [
+				{
+					"name": "savestatofattura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Pagato\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/savestatofattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"savestatofattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatestatofattura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"Pagato1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/updatestatofattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"updatestatofattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletestatofattura",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"nome\":\"Pagato1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/deletestatofattura?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"deletestatofattura"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savefattura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":\"2021-12-12\",\r\n    \"numero\":\"00001\",\r\n    \"anno\":\"2021-01-01\",\r\n    \"importo\":\"1000\",\r\n    \"stato\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Pagato\"\r\n        },\r\n    \"cliente\":{\r\n        \"id\":\"1\",\r\n    \"ragioneSociale\":\"rag1\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/savefattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"savefattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatefattura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"data\":\"2021-12-12\",\r\n    \"numero\":\"00011\",\r\n    \"anno\":\"2021\",\r\n    \"importo\":\"1000\",\r\n    \"stato\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"Pagato\"\r\n        },\r\n    \"cliente\":{\r\n        \"id\":\"1\",\r\n    \"ragioneSociale\":\"rag1\",\r\n    \"partitaIva\":\"12345678900\",\r\n    \"tipoCliente:\":\"SRL\",\r\n    \"email\":\"email2@email.com\",\r\n    \"pec\":\"pec1@pec.com\",\r\n    \"telefono\":\"123456\",\r\n    \"nomeContatto\":\"nomecontatto1\",\r\n    \"cognomeContatto\":\"cognomecontatto1\",\r\n    \"telefonoContatto\":\"1234567\",\r\n    \"emailContatto\":\"emailcontatto@email.com\",\r\n    \"indirizzosedeoperativa\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"indirizzosedelegale\":{\r\n    \"id\":\"1\",    \r\n    \"via\":\"Via dei Mille\",\r\n    \"civico\":\"123\",\r\n    \"cap\":\"00000\",\r\n    \"localita\":\"localita1\",\r\n    \"comune\":{\r\n        \"id\":\"1\",\r\n        \"nome\":\"comune1\",\r\n        \"provincia\":{\r\n            \"id\":\"1\",\r\n            \"nome\":\"Prova\",\r\n            \"sigla\":\"Pr\"\r\n\r\n        }\r\n    }\r\n},\r\n\"dataInserimento\":\"2021-12-12\",\r\n\"dataUltimoContatto\":\"2021-12-12\",\r\n\"fatturatoAnnuale\":\"10000\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/updatefattura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"updatefattura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletefattura",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/fatturacontroller/deletefattura?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"fatturacontroller",
+								"deletefattura"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"username1\",\r\n    \"email\":\"email1@email.com\",\r\n    \"password\":\"psw1\",\r\n    \"nome\":\"nome1\",\r\n    \"cognome\":\"cognome1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"username1\",\r\n    \"password\":\"psw1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

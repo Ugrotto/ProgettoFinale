@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import it.epicode.beservice.model.Cliente;
-import it.epicode.beservice.model.Provincia;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
@@ -21,8 +20,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 	Page<Optional<Cliente>> findByOrderByDataUltimoContattoAsc(Pageable pageable);
 
-	Page<Optional<Cliente>> findByIndirizzosedelegaleComuneProvinciaOrderByIndirizzosedelegaleComuneProvinciaAsc(
-			Pageable pageable, Provincia provincia);
+	Page<Optional<Cliente>> findByOrderByIndirizzosedelegaleComuneProvinciaAsc(Pageable pageable);
 
 	@Query("SELECT c FROM Cliente c WHERE fatturatoAnnuale >=:fatturato")
 	Page<Optional<Cliente>> findByFatturatoAnnuale(Pageable pageable, Double fatturato);

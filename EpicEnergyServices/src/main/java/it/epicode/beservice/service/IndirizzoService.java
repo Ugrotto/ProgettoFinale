@@ -30,4 +30,8 @@ public class IndirizzoService {
 		this.indirizzoRepo.flush();
 	}
 
+	public Indirizzo findByid(Long idconverter) {
+		return indirizzoRepo.findByIdIndirizzo(idconverter);
+	}
+
 }

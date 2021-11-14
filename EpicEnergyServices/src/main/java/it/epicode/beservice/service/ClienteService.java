@@ -1,6 +1,7 @@
 package it.epicode.beservice.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import it.epicode.beservice.model.Cliente;
-import it.epicode.beservice.model.Provincia;
 import it.epicode.beservice.repository.ClienteRepository;
 
 @Service
@@ -63,8 +63,8 @@ public class ClienteService {
 		return this.clienteRepo.findByOrderByDataUltimoContattoAsc(page);
 	}
 
-	public Page<Optional<Cliente>> findByOrderByIndirizzoSedeLegale(Pageable page, Provincia provincia) {
-		return this.clienteRepo.findByIndirizzosedelegaleComuneProvinciaOrderByIndirizzosedelegaleComuneProvinciaAsc(page, provincia);
+	public Page<Optional<Cliente>> findByOrderByIndirizzoSedeLegale(Pageable page) {
+		return this.clienteRepo.findByOrderByIndirizzosedelegaleComuneProvinciaAsc(page);
 	}
 
 	public Page<Optional<Cliente>> findByfatturatoAnnuale(Pageable page, Double fatturato) {
@@ -78,5 +78,15 @@ public class ClienteService {
 	public Page<Optional<Cliente>> findByRagioneSociale(Pageable page, String nome) {
 		return this.clienteRepo.findByRagioneSociale(page, nome);
 	}
+	public Cliente findByIdCliente(Long id) {
+		return this.clienteRepo.findByIdCliente(id);
+	}
+	public Optional<Cliente> findId(Long id){
+		return this.clienteRepo.findById(id);
+	}
 
+	public List<Cliente> findAll() {
+		return this.clienteRepo.findAll();
+	}
+	
 }

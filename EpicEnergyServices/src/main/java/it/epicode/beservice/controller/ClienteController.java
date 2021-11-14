@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.epicode.beservice.model.Cliente;
-import it.epicode.beservice.model.Provincia;
 import it.epicode.beservice.service.ClienteService;
 
 @RestController
@@ -81,9 +80,9 @@ public class ClienteController {
 			return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
 	}
 
-	@PostMapping("/ordineprovincia")
-	public ResponseEntity<?> findByOrderByIndirizzoSedeLegale(Pageable page, @RequestBody Provincia prov) {
-		Page<Optional<Cliente>> find = this.clienteService.findByOrderByIndirizzoSedeLegale(page, prov);
+	@GetMapping("/ordineprovincia")
+	public ResponseEntity<?> findByOrderByIndirizzoSedeLegale(Pageable page) {
+		Page<Optional<Cliente>> find = this.clienteService.findByOrderByIndirizzoSedeLegale(page);
 		if (find.hasContent()) {
 			return new ResponseEntity<>(find, HttpStatus.OK);
 		} else
@@ -114,6 +113,15 @@ public class ClienteController {
 	public ResponseEntity<?> findByRagioneSociale(Pageable page, @RequestParam String nome) {
 		Page<Optional<Cliente>> find = this.clienteService.findByRagioneSociale(page, nome);
 		if (find.hasContent()) {
+			return new ResponseEntity<>(find, HttpStatus.OK);
+		} else
+			return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+	}
+	
+	@GetMapping("/findid")
+	public ResponseEntity<?> findById(@RequestParam Long id) {
+		Optional<Cliente> find = this.clienteService.findId(id);
+		if (find.isPresent()) {
 			return new ResponseEntity<>(find, HttpStatus.OK);
 		} else
 			return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);

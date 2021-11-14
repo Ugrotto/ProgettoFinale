@@ -8,13 +8,14 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 //import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Component;
 
 import it.epicode.beservice.model.Comune;
 import it.epicode.beservice.model.Provincia;
 import it.epicode.beservice.service.ComuneService;
 import it.epicode.beservice.service.ProvinciaService;
 
-//@Component
+@Component
 public class Common implements CommandLineRunner {
 	@Autowired
 	ComuneService comuneService;
@@ -22,9 +23,9 @@ public class Common implements CommandLineRunner {
 	@Autowired
 	ProvinciaService provinciaService;
 
-	private static final String PATH_COMUNE = "C:\\Users\\marco\\Documents\\Cose\\comuni.csv";
+	private static final String PATH_COMUNE = "EpicEnergyServices\\CSV-postman\\comuni.csv";
 
-	private static final String PATH_PROVINCIA = "C:\\Users\\marco\\Documents\\Cose\\province.csv";
+	private static final String PATH_PROVINCIA = "EpicEnergyServices\\CSV-postman\\province.csv";
 
 	@Override
 	public void run(String... args) throws Exception {
